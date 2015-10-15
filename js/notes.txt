@@ -1,0 +1,33 @@
+Card Types and functionality
+
+Exploding Kitten: a player loses when they draw this card, unless they have a Defuse card in which case the Defuse is discarded and the Exploding Kitten placed back into the deck.
+Defuse: allows the player to continue playing after drawing an Exploding Kitten.
+Skip: the player ends their turn without drawing a card. <ends turn unless negated>
+Attack: the player ends their turn without drawing a card and the next player takes two turns. <ends turn unless negated>
+See the Future: the player views the top three cards of the deck.
+Shuffle: the player shuffles the deck.
+Favor: another player must give the player a card from their hand. <player selects another player>
+Nope: stops the action of another player. Cannot be used on Exploding Kittens or Defuse cards. <used in response to another played card>
+No Instructions: <have no effect unless played as 2 of a kind,  three of a kind, or five different cards>
+  Pair: another player must give up a card at random from their hand to the player who played the pair.
+  Triple: another player must give up a card named by the player playing the triple. If the other player does not
+    have the requested card, nothing is given up,
+  Pentuple: a player
+
+
+Game loop should be as follows:
+Assuming a turn flow works
+turn starts on a player
+player may play cards in hand
+if a card is played and the card was not a defuse card then any player may play nope
+all player may continue playing nopes until they decide to stop.
+if the total number of nopes played is even, the card effect is invoked.
+otherwise the card is negated and the turn continues as normal.
+player may continue playing cards until he chooses to stop or until cards run out.
+unless card effects ditate otherwise, a card is drawn from the deck and added to the player's hand, unless it is an exploding kitten.
+if the newly drawn card is instead an exploding kitten,
+if the player has a defuse card, he can choose to play it and instead of losing he may reinsert the card back into the deck.
+When reinserting an exploding kitten the deck's cards may not be viewed. The card may be reinserted in any location on the deck.
+If the player does not have a defuse card, the player loses, and the exploding kitten is discarded into the discard pile, as well as any
+  any cards left over in that player's hand.
+Play continues until only one player remains and wins.
