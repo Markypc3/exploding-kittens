@@ -1,0 +1,14 @@
+.container {
+  margin: 0 auto;
+  width: 1080px;
+}
+
+.banner {
+  color: white;
+  margin: inherit;
+  width: 960px;
+  height: 650px;
+  background: url('../assets/images/introBanner.png');
+  background-size: cover;
+  background-position: center;
+}
