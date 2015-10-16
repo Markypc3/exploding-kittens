@@ -31,3 +31,9 @@ When reinserting an exploding kitten the deck's cards may not be viewed. The car
 If the player does not have a defuse card, the player loses, and the exploding kitten is discarded into the discard pile, as well as any
   any cards left over in that player's hand.
 Play continues until only one player remains and wins.
+
+
+current state is that i originally wanted to have each card have an attached function within itself.
+I think now instead that i want to have the game loop simply have a stack of played cards which get resolved (nopes etc.)
+this means that the game should loop over turns and then resolve cards as opposed to applying cards as they are selected.
+I think this will separate responsibilities better.
