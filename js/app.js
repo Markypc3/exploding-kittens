@@ -8,7 +8,7 @@ var Card = (function () {
   var name = '';
   var type = '';
   var image = '';
-  var apply = {
+  var apply = { //
     explodingkitten:function(currentPlayer){
       if(currentPlayer.has('defuse')){//todo: implement player module and has function, as well as hand array
         alert('Use defuse card?');
@@ -31,10 +31,17 @@ var Card = (function () {
       this.name = name;
       this.type = type;
       this.image = image;
-      this.
+      this.isExplodingKitten = function(){
+        if (this.type = 'explodingKitten') {
+          return true;
+        }
+        return false;
+      }
     }
   }
 })();
+
+
 var Deck = (function () {
   var cards = [1,2,3,4,5,6,7,8,9,0];
   //this object is used only to assist game setup. one cards are set up, the game begin and this is not used.
@@ -53,6 +60,9 @@ var Deck = (function () {
       //insert explodingkittens in the amount of one less than the amount of players into the deck
       //shuffle.
     },
+    getDeckLength:function(){
+      return cards.length;
+    },
     insertCard: function(card) {
       cards.push(card);
     },
@@ -68,12 +78,14 @@ var Deck = (function () {
       this.shuffle();
       console.log(cards.join());
     },
-    draw: function(currentPlayer){
+    draw: function(){
       return cards.pop();
     }
 
   }
 })();
+
+
 var Player = (function() {
   var name = '';
   var hand = [];
@@ -81,19 +93,42 @@ var Player = (function() {
     create: function (/*name*/) {
       this.name = '';//name
       this.hand = [];
+      this.exploded = false;
+      var go = function(){
+        alert(name + ' It\'s your turn!');
+        var drawnCard = Deck.draw();
+        if (drawnCard.isExplodingKitten()) {
+          alert('You drew an exploding kitten!');
+          if(this.has('defuse')){//todo: implement player module and has function, as well as hand array
+            alert('Use defuse card?');
+            //allow player to activate a defuse card from their hand.
+            Deck.reInsertKitten(drawnCard,Deck.getDeckLength());
+          } else {
+            alert(currentPlayer.getName() + ' doesn\'t have a defuse card! BOOM!');
+            this.exploded = true;
+          }
+        } else {
+          this.hand.push(drawnCard);
+        }
+      };
     }
   }
 })();
+
+
 var Game = (function() {
   var players = [];
   var maxPlayers = 5;
-  var turn = 0;
+  var turn = -1;
+  var currentPlayer;
   return {
     getTurn: function(){
-      turn++;
-      turn %= players.length;
-      return turn;
-    }
+      do {
+        turn++;
+        turn %= players.length;
+      } while(players[turn].exploded());
+      return currentPlayer = players[turn];
+    },
     startGame: function(numberOfPlayers){
       if (numberOfPlayers > maxPlayers) {
         console.log("You can't have more than " + maxPlayers + " players playing this game.");
@@ -105,6 +140,13 @@ var Game = (function() {
       Deck.initialize(players);
       while(true){
         //game loop
+        this.getTurn().go();
+        if(currentPlayer.exploded()){
+          this.checkwin();
+        }
+        //there should probably be a card call stack for when people can play multiple cards.
+
+
       }
     }
   }
