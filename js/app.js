@@ -1,9 +1,19 @@
 window.onload = function(){
   console.log("let's get started building exploding kittens!!!");
+  printCardDistribution(cardsJson);
   Deck.initialize(4);
 }
 // var types = ['Exploding Kitten']
-
+var printCardDistribution = function(cardSet){
+  var count = 0;
+  for (var cardType in cardSet) {
+    if (cardSet.hasOwnProperty(cardType)) {
+      count += cardSet[cardType].length;
+      console.log(cardType + ': ' + cardSet[cardType].length);
+    }
+  }
+  console.log("The total card count is " + count);
+};
 var Card = (function () {
   var name = '';
   var type = '';
@@ -27,10 +37,11 @@ var Card = (function () {
     }
   };
   return {
-    Card: function(name, type, image){
-      this.name = name;
-      this.type = type;
-      this.image = image;
+    Card: function(cardJSON){
+      this.name = cardJSON.name;
+      this.flavorText = cardJSON.flavorText;
+      this.type = cardJSON.type;
+      this.image = cardJSON.image;
       this.isExplodingKitten = function(){
         if (this.type = 'explodingKitten') {
           return true;
@@ -68,7 +79,7 @@ var Deck = (function () {
     },
     reInsertKitten: function(card,index) {
       //TODO:need to insert card into index and push rest of cards down.
-    }
+    },
     initialize: function(players){
       //populate cards to contain the correct amount of cards of each type except EKs and defuses.
       //populate gameSetupCards to contain the defuses and explodingkittens as appropriate.
@@ -82,7 +93,7 @@ var Deck = (function () {
       return cards.pop();
     }
 
-  }
+  };
 })();
 
 

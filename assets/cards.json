@@ -1,0 +1,420 @@
+var cardsJson = {
+  "beardcat":[
+    {
+      "name":"Beard Cat",
+      "cardId":"bc1",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Beard Cat",
+      "cardId":"bc2",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Beard Cat",
+      "cardId":"bc3",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Beard Cat",
+      "cardId":"bc4",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    }
+  ],
+  "hairypotatocat":[
+    {
+      "name":"Hairy Potato Cat",
+      "cardId":"hpc1",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Hairy Potato Cat",
+      "cardId":"hpc2",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Hairy Potato Cat",
+      "cardId":"hpc3",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Hairy Potato Cat",
+      "cardId":"hpc4",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    }
+  ],
+  "rainbowRalphingCat":[
+    {
+      "name":"Rainbow-Ralphing Cat",
+      "cardId":"rrc1",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Rainbow-Ralphing Cat",
+      "cardId":"rrc2",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Rainbow-Ralphing Cat",
+      "cardId":"rrc3",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Rainbow-Ralphing Cat",
+      "cardId":"rrc4",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    }
+  ],
+  "tacocat":[
+    {
+      "name":"Tacocat",
+      "cardId":"tc1",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Tacocat",
+      "cardId":"tc2",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Tacocat",
+      "cardId":"tc3",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Tacocat",
+      "cardId":"tc4",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    }
+  ],
+  "cattermelon":[
+    {
+      "name":"Cattermelon",
+      "cardId":"cm1",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Cattermelon",
+      "cardId":"cm2",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Cattermelon",
+      "cardId":"cm3",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    },
+    {
+      "name":"Cattermelon",
+      "cardId":"cm4",
+      "flavorText":"",
+      "type":"inactive",
+      "image":""
+    }
+  ],
+  "seeTheFuture":[
+    {
+      "name":"See The Future",
+      "cardId":"stf1",
+      "flavorText":"Deploy the Special-Ops Bunnies",
+      "type":"seeTheFuture",
+      "image":""
+    },
+    {
+      "name":"See The Future",
+      "cardId":"stf2",
+      "flavorText":"Ask The All-Seeing Goat Wizard",
+      "type":"seeTheFuture",
+      "image":""
+    },
+    {
+      "name":"See The Future",
+      "cardId":"stf3",
+      "flavorText":"Feast upon a Unicorn Enchilada and Gain Its Enchilada Powers",
+      "type":"seeTheFuture",
+      "image":""
+    },
+    {
+      "name":"See The Future",
+      "cardId":"stf4",
+      "flavorText":"Summon the Mantis Shrimp",
+      "type":"seeTheFuture",
+      "image":""
+    },
+    {
+      "name":"See The Future",
+      "cardId":"stf5",
+      "flavorText":"Rub the Belly of a Pig-A-Corn",
+      "type":"seeTheFuture",
+      "image":""
+    }
+  ],
+  "skip":[
+    {
+      "name":"Skip",
+      "cardId":"sk1",
+      "flavorText":"Crab Walk with some Crabs",
+      "type":"skip",
+      "image":""
+    },
+    {
+      "name":"Skip",
+      "cardId":"sk2",
+      "flavorText":"Don a Portable Cheetah Butt",
+      "type":"skip",
+      "image":""
+    },
+    {
+      "name":"Skip",
+      "cardId":"sk3",
+      "flavorText":"Commandeer  BunnyRaptor",
+      "type":"skip",
+      "image":""
+    },
+    {
+      "name":"Skip",
+      "cardId":"sk4",
+      "flavorText":"Engage the HyperGoat",
+      "type":"skip",
+      "image":""
+    }
+  ],
+  "shuffle":[
+    {
+      "name":"Shuffle",
+      "cardId":"sh1",
+      "flavorText":"A Transdimensional Litter Box Materializes",
+      "type":"shuffle",
+      "image":""
+    },
+    {
+      "name":"Shuffle",
+      "cardId":"sh2",
+      "flavorText":"AbraCrab Lincoln is Elected President",
+      "type":"shuffle",
+      "image":""
+    },
+    {
+      "name":"Shuffle",
+      "cardId":"sh3",
+      "flavorText":"A Plague of Bat Farts Descends From the Sky",
+      "type":"shuffle",
+      "image":""
+    },
+    {
+      "name":"Shuffle",
+      "cardId":"sh4",
+      "flavorText":"An ElectroMagnetic Pomeranian Storm Rolls in from the East",
+      "type":"shuffle",
+      "image":""
+    }
+  ],
+  "attack":[
+    {
+      "name":"Attack",
+      "cardId":"at1",
+      "flavorText":"Fire the Crab-A-Pult",
+      "type":"attack",
+      "image":""
+    },
+    {
+      "name":"Attack",
+      "cardId":"at2",
+      "flavorText":"Deploy the Thousand-Year Back Hair",
+      "type":"attack",
+      "image":""
+    },
+    {
+      "name":"Attack",
+      "cardId":"at3",
+      "flavorText":"Unleash the Catterwocky",
+      "type":"attack",
+      "image":""
+    },
+    {
+      "name":"Attack",
+      "cardId":"at4",
+      "flavorText":"Awaken the Bear-O-Dactyl",
+      "type":"attack",
+      "image":""
+    }
+  ],
+  "nope":[
+    {
+      "name":"Nope",
+      "cardId":"np1",
+      "flavorText":"Feed Your Opponent a Nope Sandwich with Extra Nopesauce",
+      "type":"nope",
+      "image":""
+    },
+    {
+      "name":"Nope",
+      "cardId":"np2",
+      "flavorText":"Win The Nopebell Peace Prize",
+      "type":"nope",
+      "image":""
+    },
+    {
+      "name":"Nope",
+      "cardId":"np3",
+      "flavorText":"A Jackanope Bounds Into The Room",
+      "type":"nope",
+      "image":""
+    },
+    {
+      "name":"Nope",
+      "cardId":"np4",
+      "flavorText":"Nopestradamus Speaks The Truth",
+      "type":"nope",
+      "image":""
+    },
+    {
+      "name":"Nope",
+      "cardId":"np5",
+      "flavorText":"A Nope Ninja Delivers a Wicked Dragon Kick",
+      "type":"nope",
+      "image":""
+    }
+  ],
+  "favor":[
+    {
+      "name":"Favor",
+      "cardId":"fv1",
+      "flavorText":"Get Enslaved by Party Squirrels",
+      "type":"favor",
+      "image":""
+    },
+    {
+      "name":"Favor",
+      "cardId":"fv2",
+      "flavorText":"Rub Peanut Butter on Your Belly Button and Make Some New Friends",
+      "type":"favor",
+      "image":""
+    },
+    {
+      "name":"Favor",
+      "cardId":"fv3",
+      "flavorText":"Ask For A Back Hair Shampoo",
+      "type":"favor",
+      "image":""
+    },
+    {
+      "name":"Favor",
+      "cardId":"fv4",
+      "flavorText":"Take Your Friends Beard-Sailing on Your Beard Boat",
+      "type":"favor",
+      "image":""
+    }
+  ],
+  "explodingKitten":[
+    {
+      "name":"Exploding Kitten",
+      "cardId":"ek1",
+      "flavorText":"Warning: Cat Hair in Warp Core",
+      "type":"explodingKitten",
+      "image":""
+    },
+    {
+      "name":"Exploding Kitten",
+      "cardId":"ek2",
+      "flavorText":"TNT",
+      "type":"explodingKitten",
+      "image":""
+    },
+    {
+      "name":"Exploding Kitten",
+      "cardId":"ek3",
+      "flavorText":"Launch? y/n",
+      "type":"explodingKitten",
+      "image":""
+    },
+    {
+      "name":"Exploding Kitten",
+      "cardId":"ek4",
+      "flavorText":"Grenade",
+      "type":"explodingKitten",
+      "image":""
+    }
+  ],
+  "defuse":[
+    {
+      "name":"Defuse",
+      "cardId":"df1",
+      "flavorText":"Via Laser Pointer",
+      "type":"defuse",
+      "image":""
+    },
+    {
+      "name":"Defuse",
+      "cardId":"df2",
+      "flavorText":"Via 3AM Flatulence",
+      "type":"defuse",
+      "image":""
+    },
+    {
+      "name":"Defuse",
+      "cardId":"df3",
+      "flavorText":"Via Kitten Therapy",
+      "type":"defuse",
+      "image":""
+    },
+    {
+      "name":"Defuse",
+      "cardId":"df4",
+      "flavorText":"Via Belly Rubs",
+      "type":"defuse",
+      "image":""
+    },
+    {
+      "name":"Defuse",
+      "cardId":"df5",
+      "flavorText":"Via Catnip Sandwiches",
+      "type":"defuse",
+      "image":""
+    },
+    {
+      "name":"Defuse",
+      "cardId":"df6",
+      "flavorText":"Via Participation in Kitten Yoga",
+      "type":"defuse",
+      "image":""
+    }
+  ]
+};
