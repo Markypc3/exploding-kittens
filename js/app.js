@@ -2,6 +2,7 @@ window.onload = function(){
   console.log("let's get started building exploding kittens!!!");
   printCardDistribution(cardsJson);
   Deck.initialize(4);
+  document.querySelector('button').addEventListener('click',function(){Game.startGame();});
 }
 // var types = ['Exploding Kitten']
 var printCardDistribution = function(cardSet){
@@ -140,11 +141,13 @@ var Game = (function() {
       } while(players[turn].exploded());
       return currentPlayer = players[turn];
     },
-    startGame: function(numberOfPlayers){
+    startGame: function(){
+      var numberOfPlayers = document.querySelector('#numberOfPlayers').value;
       if (numberOfPlayers > maxPlayers) {
         console.log("You can't have more than " + maxPlayers + " players playing this game.");
         return false;
       }
+      alert('game started with ' + numberOfPlayers + ' players. thanks!');
       for (var i = 0; i < numberOfPlayers; i++) {
         players.push(new Player.create());
       }
