@@ -82,6 +82,11 @@ var Deck = (function () {
       //TODO:need to insert card into index and push rest of cards down.
     },
     initialize: function(players){
+      for (var cardType in cardsJson) {
+        if (cardsJson.hasOwnProperty(cardType)) {
+
+        }
+      }
       //populate cards to contain the correct amount of cards of each type except EKs and defuses.
       //populate gameSetupCards to contain the defuses and explodingkittens as appropriate.
       //go through card list and create all the cards.
@@ -106,7 +111,7 @@ var Player = (function() {
       this.name = '';//name
       this.hand = [];
       this.exploded = false;
-      var go = function(){
+      this.go = function(){
         alert(name + ' It\'s your turn!');
         var drawnCard = Deck.draw();
         if (drawnCard.isExplodingKitten()) {
@@ -123,6 +128,7 @@ var Player = (function() {
           this.hand.push(drawnCard);
         }
       };
+
     }
   }
 })();
@@ -138,24 +144,40 @@ var Game = (function() {
       do {
         turn++;
         turn %= players.length;
-      } while(players[turn].exploded());
+      } while(players[turn].exploded);
       return currentPlayer = players[turn];
     },
     startGame: function(){
-      var numberOfPlayers = document.querySelector('#numberOfPlayers').value;
+      var numberOfPlayers = parseInt(document.querySelector('#numberOfPlayers').value);
       if (numberOfPlayers > maxPlayers) {
         console.log("You can't have more than " + maxPlayers + " players playing this game.");
         return false;
+      } else if (isNaN(numberOfPlayers) || numberOfPlayers < 2) {
+        alert('Invalid entry');
+        return;
       }
+      var field = document.getElementsByClassName('playerFields')[0];
       alert('game started with ' + numberOfPlayers + ' players. thanks!');
+      var test = prompt('hello?');
       for (var i = 0; i < numberOfPlayers; i++) {
         players.push(new Player.create());
+        var playerElements = document.createElement('div');
+        playerElements.className = 'playerHand';
+        playerElements.setAttribute('id','player'+(i+1));
+        var playerHeading = document.createElement('h1');
+        playerHeading.innerHTML = 'Player '+(i+1);
+        var playerHand = document.createElement('div');
+        playerHand.className = 'cards';
+        playerElements.appendChild(playerHeading);
+        playerElements.appendChild(playerHand);
+        field.appendChild(playerElements);
       }
+
       Deck.initialize(players);
       while(true){
         //game loop
         this.getTurn().go();
-        if(currentPlayer.exploded()){
+        if(currentPlayer.exploded){
           this.checkwin();
         }
         //there should probably be a card call stack for when people can play multiple cards.
