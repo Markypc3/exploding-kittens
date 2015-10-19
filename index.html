@@ -8,13 +8,42 @@
   <body>
     <div class="container">
       <div class="banner">
-        <h1>Exploding Kittens</h1>
-        <div class="tray">
-          Welcome
+      </div>
+      <div class="tray">
+        Welcome to Exploding Kittens. This is the super fast version of exploding kittens and so all cards except defuse and exploding kittens have no effect.<br />
+        How many players are playing?
+        <input type="text" id="numberOfPlayers" placeholder="2" value="" />
+        <button id="newGameButton" value="Start Game!"></button>
+      </div>
+      <div class="mainField">
+        <div class="deck">
+          <div class="card">
+
+          </div>
+        </div>
+        <div class="discardPile">
+          <div class="card">
+
+          </div>
         </div>
       </div>
-      <div class="field">
+      <div class="playerFields">
+        <div class="playerHand" id="player1">
+          <h1>Player 1</h1>
+          <div class="cards">
+            <div class="card">
 
+            </div>
+          </div>
+        </div>
+        <div class="playerHand" id="player2">
+          <h1>Player 2</h1>
+          <div class="cards">
+            <div class="card">
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="assets/cards.json" charset="utf-8"></script>

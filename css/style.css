@@ -1,14 +1,50 @@
+body {
+  background-color: rgba(155, 0, 20, 1);
+}
 .container {
   margin: 0 auto;
-  width: 1080px;
+  width: 960px;
+  background-color: red;
 }
 
 .banner {
   color: white;
   margin: inherit;
-  width: 960px;
-  height: 650px;
+  width: 320px;
+  height: 180px;
   background: url('../assets/images/introBanner.png');
   background-size: cover;
   background-position: center;
+  border-radius: 5px;
+}
+.tray {
+  margin: inherit;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  max-width: 450px;
+  border-radius: 10px;
+}
+.mainField {
+  border-radius: 10px;
+}
+.playerFields {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 960px;
+  float: left;
+  border-radius: 10px;
+}
+.playerHand {
+  float:left;
+  margin: 24px;
+  padding: 24px;
+  width:40%;
+  border-radius: 10px;
+}
+.card {
+  width: 80px;
+  height: 120px;
+  float: left;
+  background: url('../assets/images/Rainbow-Ralphing Cat.png');
+  background-size: cover;
+  border-radius: 10px;
 }
